@@ -1,6 +1,8 @@
+var randomId = () => {
+    return "A981" + (Math.floor(Math.random() * 8000 ) + 1000).toString() + "A" 
+};
 
-
-createScalarDeviceChart = function( canvasElementId, description, color ) {
+scalarChart = function( canvasElementId, description, color ) {
     var updateValue;
     new Chart(
       document.getElementById(canvasElementId),
@@ -79,15 +81,14 @@ createScalarDeviceChart = function( canvasElementId, description, color ) {
     }
   }
   
-
-createVibratorWsd = function(identifier, deviceAddress, updateFn) {
+vibratorDevice = function(identifier, updateFn) {
     let ws = new WebSocket("ws://127.0.0.1:54817");
     // When we open, send handshake and setup event handlers
     ws.addEventListener("open", (socket) => {
       console.log("Connected");
       ws.send(JSON.stringify({
         identifier: identifier,
-        address: deviceAddress,
+        address: randomId(),
         version: 0
       }));
       console.log("Handshake Sent");

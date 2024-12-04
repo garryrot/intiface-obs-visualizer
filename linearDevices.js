@@ -1,5 +1,8 @@
+var randomId = () => {
+    return "A981" + (Math.floor(Math.random() * 8000 ) + 1000).toString() + "C" 
+};
 
-createLinearDeviceChart = function(canvasElementId) {
+linearChart = function(canvasElementId) {
     const ctx = document.getElementById(canvasElementId ).getContext("2d");
     const barChart = new Chart(ctx, {
       type: "bar",
@@ -53,14 +56,13 @@ createLinearDeviceChart = function(canvasElementId) {
   };
 }
 
-createStrokerWSD = function(identifier, address, updateFn) {
+strokerDevice = function(identifier, updateFn) {
     let ws = new WebSocket("ws://127.0.0.1:54817");
-  
     ws.addEventListener("open", (socket) => {
       console.log("Connected");
       ws.send(JSON.stringify( {
         identifier: identifier,
-        address: address,
+        address: randomId(),
         version: 0
       }));
       console.log("Handshake Sent");

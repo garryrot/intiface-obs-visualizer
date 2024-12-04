@@ -86,9 +86,10 @@ vibratorDevice = function(identifier, updateFn) {
     // When we open, send handshake and setup event handlers
     ws.addEventListener("open", (socket) => {
       console.log("Connected");
+      var deviceAddress = randomId()
       ws.send(JSON.stringify({
         identifier: identifier,
-        address: randomId(),
+        address: deviceAddress,
         version: 0
       }));
       console.log("Handshake Sent");

@@ -1,0 +1,55 @@
+/* Apply dark background and white text to the entire page */
+body {
+    background-color: #121212;  /* Dark background */
+    color: #ffffff;  /* White text */
+    font-family: Arial, sans-serif; /* Optional: set font */
+}
+
+/* Ensure links are visible with white text */
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Add a hover effect for links */
+a:hover {
+    color: #bbbbbb;  /* Lighter color on hover */
+}
+
+/* Style headings to have white text */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+}
+
+/* Style buttons with dark background and white text */
+button {
+    background-color: #333333;  /* Dark button background */
+    color: #ffffff;  /* White text */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Add hover effect for buttons */
+button:hover {
+    background-color: #555555;
+}
+
+/* Form inputs and text areas should also have dark background and white text */
+input, textarea {
+    background-color: #222222;
+    color: #ffffff;
+    border: 1px solid #444444;
+}
+
+.graph-container {
+    display: flex; /* Arrange child elements in a row */
+    justify-content: space-around; /* Add space between the graphs */
+    align-items: center; /* Center the graphs vertically */
+}
+
+.expanding-div {
+    flex-grow: 1;
+    background-color: lightblue;
+  }
+

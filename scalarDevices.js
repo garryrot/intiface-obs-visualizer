@@ -1,5 +1,5 @@
 var randomId = () => {
-    return "A981" + (Math.floor(Math.random() * 8000 ) + 1000).toString() + "A" 
+    return "A981" + (Math.floor(Math.random() * 8000) + 1000).toString() + "A" 
 };
 
 scalarChart = function( canvasElementId, description, color ) {
